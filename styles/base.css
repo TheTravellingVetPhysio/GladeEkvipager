@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* VARIABLES */
+:root {
+  /* CHOSEN DESIGN COLORS */
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --yellow-dark: hsl(44, 100%, 70%);
+  --yellow-light: hsl(42, 100%, 83%);
+  --green-dark: hsl(105, 14%, 33%);
+  --green-light: hsl(71, 18%, 62%);
+  --grey-dark: hsl(60, 1%, 39%);
+  --grey-light: hsl(170, 3%, 60%);
+
+  /* COLOR VARIABLES IN DOCUMENT */
+  --bg-color: var(--white);
+  --header-bg: color-mix(in srgb, var(--black) 65%, transparent);
+  --footer-bg: var(--green-dark);
+
+  /* FONTS */
+  --font-display: "Dosis", sans-serif; /* h1, h2 */
+  --font-accent: "Montserrat", sans-serif; /* h3-h6, nav, knapper */
+  --font-body: "Lato", sans-serif; /* brødtekst */
+
+  --header-height: 4rem;
+}
+
+/* SIZE VARIABLES IN DOCUMENT */
+@media (min-width: 768px) {
+  :root {
+    --header-height: 5rem;
+  }
+}
+
+@media (min-width: 1034px) {
+  :root {
+    --header-height: 6rem;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #222;
+  background: #faf9f7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SECTIONS */
+#layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* stablet på mobil */
+}
+
+@media (min-width: 1034px) {
+  #layout {
+    flex-direction: row; /* side om side på tablet+ */
+  }
+}
+
+main {
+  flex: 1;
+}
+
+aside {
+  flex-shrink: 0;
+}
+
+.text-content {
+  width: clamp(300px, 90%, 1024px);
+  margin: auto;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex div {
+  flex: 1;
+  min-width: 250px; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+}
+
+.profile-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* FONTS */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-family: var(--font-accent);
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-accent);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+nav,
+nav button {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+
+button,
+.btn {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1034px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  nav,
+  nav button {
+    font-size: 0.95rem;
+  }
+}
+
+/* SCROLLBAR */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color); /* lys baggrund */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green-dark);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-light);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-dark) var(--bg-color);
+}

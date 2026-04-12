@@ -1,0 +1,40 @@
+<div class="logo-title">
+  <img
+    class="sitelogo"
+    src="resources/branding/Glade Ekvipager � Logo ikon � Gennemsigtigt.png"
+  />
+  <h1 onclick="loadPage('pages/forside.html')" data-path="pages/forside.html">
+    Glade Ekvipager
+  </h1>
+</div>
+
+<button class="burger" id="burger" aria-label="Åbn menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav id="nav">
+  <button onclick="loadPage('pages/about.html')" data-path="pages/about.html">
+    Om Glade Ekvipager
+  </button>
+  <button
+    onclick="loadPage('pages/ydelser.html')"
+    data-path="pages/ydelser.html"
+  >
+    Ydelser
+  </button>
+  <button onclick="loadBlogOversigt()" data-path="blog">Blog</button>
+  <button
+    onclick="loadPage('pages/contact.html')"
+    data-path="pages/contact.html"
+  >
+    Kontakt
+  </button>
+  <button
+    onclick="loadPage('pages/nextstep.html')"
+    data-path="pages/nextstep.html"
+  >
+    Book gratis samtale
+  </button>
+</nav>
