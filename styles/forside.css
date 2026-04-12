@@ -1,3 +1,5 @@
+/* SLIDER */ 
+
 #slider {
   position: relative;
   width: 100%;
@@ -127,4 +129,39 @@
 .slide-content button:hover {
   background: rgba(255, 255, 255, 0.4);
   color: white;
+}
+
+/* YDELSER */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;        /* mobil: 1 kolonne */
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr); /* desktop: 3 kolonner */
+  }
+}
+
+.services-grid > div {
+  border-radius: 5px;
+  background-color: var(--accent-bg);
+}
+
+.services-grid > div > div {
+  padding: 1rem;
+}
+
+.services-grid img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+}
+
+.services-grid ul {
+
+  margin: 0;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
 }
