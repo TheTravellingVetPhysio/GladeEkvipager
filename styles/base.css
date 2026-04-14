@@ -18,7 +18,7 @@
 
   /* COLOR VARIABLES IN DOCUMENT */
   --bg: hsl(43, 72%, 94%);
-  --header-bg: color-mix(in srgb, var(--black) 65%, transparent);
+  --header-bg: color-mix(in srgb, var(--black) 85%, transparent);
   --footer-bg: var(--green-dark);
   --accent-bg: var(--white);
   --accent-border: var(--yellow-dark);
@@ -28,25 +28,28 @@
   --button-accent-face-hover: var(--white);
   --button-accent-face: var(--yellow-light);
   --button-accent-border: var(--yellow-dark);
+  --font-color-light: hsl(43, 72%, 94%);
 
   /* FONTS */
   --font-display: "Dosis", sans-serif; /* h1, h2 */
   --font-accent: "Montserrat", sans-serif; /* h3-h6, nav, knapper */
   --font-body: "Lato", sans-serif; /* brødtekst */
 
+  /* STØRRELSER OG DIMENSIONER */
   --header-height: 4rem;
+  --border-radius-standard: 5px;
 }
 
 /* SIZE VARIABLES IN DOCUMENT */
 @media (min-width: 768px) {
   :root {
-    --header-height: 5rem;
+    --header-height: 4rem;
   }
 }
 
 @media (min-width: 1034px) {
   :root {
-    --header-height: 6rem;
+    --header-height: 5rem;
   }
 }
 
@@ -66,12 +69,12 @@ body {
 #layout {
   flex: 1;
   display: flex;
-  flex-direction: column; /* stablet på mobil */
+  flex-direction: column;
 }
 
 @media (min-width: 1034px) {
   #layout {
-    flex-direction: row; /* side om side på tablet+ */
+    flex-direction: row;
   }
 }
 
@@ -86,7 +89,7 @@ aside {
 .text-content {
   width: clamp(300px, 90%, 1024px);
   margin: auto;
-  padding: 4rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -111,13 +114,17 @@ aside {
 .accent-box {
   background-color: var(--accent-bg);
   border: 1px solid var(--accent-border);
-  border-radius: 5px;
+  border-radius: var(--border-radius-standard);
   padding: 1rem;
 }
 
 .accent-box ul {
   padding-left: 0;
   list-style-position: inside;
+}
+
+.hidden {
+  display: none;
 }
 
 /* IMAGES */
@@ -147,7 +154,7 @@ h2 {
 
 h3 {
   font-family: var(--font-accent);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
   font-size: 1.4rem;
 }
@@ -156,7 +163,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-accent);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
@@ -165,7 +172,7 @@ nav button {
   font-family: var(--font-accent);
   font-weight: 400;
   letter-spacing: 0.05em;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 button,
@@ -188,8 +195,32 @@ button,
   }
   nav,
   nav button {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+ul {
+  margin: 0;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+}
+
+.price-tag {
+    font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 /* BUTTONS */
@@ -201,15 +232,14 @@ button {
   transition:
     background 0.15s,
     color 0.15s;
-  margin-top: 1rem;
   padding: 0.5rem 0.9rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius-standard);
   font-size: 1rem;
 }
 
-  button:hover {
-    background: var(--button-face-hover);
-  }
+button:hover {
+  background: var(--button-face-hover);
+}
 
 /* SCROLLBAR */
 

@@ -15,7 +15,10 @@ async function loadPage(path, isBlog = false) {
     const text = await response.text();
 
     if (path.endsWith(".md")) {
-      document.getElementById("content").innerHTML = marked.parse(text);
+      document.getElementById("content").innerHTML = `
+      <article class="text-content">
+       ${marked.parse(text)}
+      </article>`;
     } else {
       document.getElementById("content").innerHTML = text;
     }
@@ -27,11 +30,22 @@ async function loadPage(path, isBlog = false) {
     <p>Siden <code>${path}</code> blev ikke fundet.</p>
     `;
   }
+  afterPageLoad(path);
+}
 
-  if (path === "pages/forside.html") {
-    initSlider();
+// Initiering af relevante funktioner for specifikke sider
+function afterPageLoad(path) {
+  switch (path) {
+    case "pages/forside.html":
+      initSlider();
+      break;
+
+    case "pages/ydelser.html":
+      initServices();
+      break;
   }
 }
+
 
 // Initiering
 async function init() {
@@ -39,17 +53,17 @@ async function init() {
   await loadComponent("footer-container", "components/footer.html");
   loadPage("pages/forside.html");
 
-  // Mobile / desktop layout
+  // Mobile / desktop menu layout
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
-  
+
   burger.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     burger.classList.toggle("open");
     burger.setAttribute("aria-expanded", isOpen);
   });
-  
-  nav.querySelectorAll("button").forEach(btn => {
+
+  nav.querySelectorAll("button").forEach((btn) => {
     btn.addEventListener("click", () => {
       nav.classList.remove("open");
       burger.classList.remove("open");

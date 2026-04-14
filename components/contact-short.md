@@ -1,0 +1,2 @@
+**Giver det mening for dig og din hest?**
+Du er altid velkommen til at skrive til info@julieherold.dk eller booke en gratis samtale, så vi kan mærke efter sammen, om og hvordan jeg kan hjælpe jer videre.

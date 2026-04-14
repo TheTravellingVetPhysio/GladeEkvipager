@@ -1,0 +1,125 @@
+/* BUTTONS */
+
+.service-categories button {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: var(--border-radius-standard);
+  border: none;
+  font-family: var(--font-accent);
+  color: var(--font-color-light);
+  cursor: pointer;
+  background: var(--header-bg);
+}
+
+.service-categories button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.service-categories button.active {
+  background: var(--button-accent-face);
+  color: var(--font-color-dark);
+}
+
+/* MOBILE first: Horisontal category-bar */
+
+.services-layout {
+  display: block;
+  padding: 2rem;
+}
+
+.services-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: none;
+}
+
+.service-categories {
+  display: flex;
+  gap: 0.75rem;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+.service-categories button {
+  white-space: nowrap;
+}
+
+.services-main {
+  padding-top: 1rem;
+}
+
+/* DESKTOP: Sidemenu */
+
+@media (min-width: 1034px) {
+  .services-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .services-nav {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+    align-self: flex-start;
+    background: none;
+    backdrop-filter: none;
+    z-index: auto;
+  }
+
+  #service-categories-container {
+    position: static;
+    align-self: center;
+    padding: 1rem;
+    border-radius: var(--border-radius-standard);
+    background-color: var(--header-bg);
+  }
+
+  .service-categories {
+    flex-direction: column;
+    white-space: normal;
+    padding: 0;
+  }
+
+  .service-categories button {
+    white-space: normal;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .services-main {
+    padding-top: 0;
+  }
+}
+
+.services-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.services-main .cards-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.services-main .cards-grid img {
+  display: block;
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
