@@ -9,7 +9,7 @@ loadComponent(
   "components/services-nav.html"
 ).then(() => {
     bindServiceCategoryEvents();
-    setServiceCategory("fysioterapi-hest");
+    setServiceCategory("featured");
   });
 }
 
