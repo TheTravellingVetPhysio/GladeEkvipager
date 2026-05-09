@@ -35,6 +35,8 @@ async function loadPage(path, isBlog = false) {
 
 // Initiering af relevante funktioner for specifikke sider
 function afterPageLoad(path) {
+  applyAssets();
+  
   switch (path) {
     case "pages/forside.html":
       initSlider();
