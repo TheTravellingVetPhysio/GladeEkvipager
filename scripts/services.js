@@ -33,6 +33,8 @@ async function setServiceCategory(category) {
       ${html}
   `;
 
+  applyAssets();
+
   updateActiveCategoryUI();
 }
 
